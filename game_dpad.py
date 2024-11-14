@@ -22,25 +22,25 @@ GPIO.setup(6, GPIO.IN, pull_up_down = GPIO.PUD_UP)  # Left
 def GPIO26_callback(channel):
     global usr_point
     usr_point = "up"
-    print("button {usr_point} pushed")
+    print(f"button {usr_point} pushed")
 GPIO.add_event_detect(26, GPIO.FALLING, callback=GPIO26_callback, bouncetime=300)  
 
 def GPIO13_callback(channel):
     global usr_point
     usr_point = "Right"
-    print("button {usr_point} pushed")
+    print(f"button {usr_point} pushed")
 GPIO.add_event_detect(13, GPIO.FALLING, callback=GPIO13_callback, bouncetime=300)  
 
 def GPIO12_callback(channel):
     global usr_point
     usr_point = "Bottom"
-    print("button {usr_point} pushed")
+    print(f"button {usr_point} pushed")
 GPIO.add_event_detect(12, GPIO.FALLING, callback=GPIO12_callback, bouncetime=300)  
 
 def GPIO6_callback(channel):
     global usr_point
     usr_point = "Left"
-    print("button {usr_point} pushed")
+    print(f"button {usr_point} pushed")
 GPIO.add_event_detect(6, GPIO.FALLING, callback=GPIO6_callback, bouncetime=300)  
 
 

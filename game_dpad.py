@@ -9,14 +9,14 @@ GPIOs
 
 Top: 26
 Right: 13
-Bottom: 12
+Bottom: 16
 Left: 6
 '''
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(26, GPIO.IN, pull_up_down = GPIO.PUD_UP) # Top
 GPIO.setup(13, GPIO.IN, pull_up_down = GPIO.PUD_UP) # Right
-GPIO.setup(12, GPIO.IN, pull_up_down = GPIO.PUD_UP) # Bottom
+GPIO.setup(16, GPIO.IN, pull_up_down = GPIO.PUD_UP) # Bottom
 GPIO.setup(6, GPIO.IN, pull_up_down = GPIO.PUD_UP)  # Left
 
 def GPIO26_callback(channel):
@@ -31,11 +31,11 @@ def GPIO13_callback(channel):
     print(f"button {usr_point} pushed")
 GPIO.add_event_detect(13, GPIO.FALLING, callback=GPIO13_callback, bouncetime=300)  
 
-def GPIO12_callback(channel):
+def GPIO16_callback(channel):
     global usr_point
     usr_point = "down"
     print(f"button {usr_point} pushed")
-GPIO.add_event_detect(12, GPIO.FALLING, callback=GPIO12_callback, bouncetime=300)  
+GPIO.add_event_detect(16, GPIO.FALLING, callback=GPIO16_callback, bouncetime=300)  
 
 def GPIO6_callback(channel):
     global usr_point
